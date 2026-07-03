@@ -8,10 +8,10 @@ def copy_file(command: str) -> None:
 
         if origin != destination:
             try:
-                with (open(origin, "r") as f,
-                      open(destination, "w") as d):
+                with (open(origin, "r") as source_file,
+                      open(destination, "w") as destination_file):
 
-                    d.write(f.read())
+                    destination_file.write(source_file.read())
 
             except FileNotFoundError:
                 pass
